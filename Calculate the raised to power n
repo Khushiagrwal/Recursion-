@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+int raised_to_power(int n,int p)
+{
+    if(p==1)
+    {
+        return n;
+    }
+    return n*raised_to_power(n,p-1);
+}
+int main()
+{
+    int n,p;
+    cin>>n>>p;
+    cout<<raised_to_power(n,p);
+}
