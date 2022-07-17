@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+bool sort_unsort(int arr[],int p,int n)
+{
+    if(p==n-1)
+    {
+        return true;
+    }
+    if(arr[p]>=arr[p+1])
+    {
+        return false;
+    }
+    return sort_unsort(arr,p+1,n);
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int array[n];
+    for(int p=0;p<n;p++)
+    {
+        cin>>array[p];
+    }
+    n=sort_unsort(array,0,n);
+    if(n==1)
+        cout<<"Sorted Array";
+    else
+        cout<<"Unsorted Array";
+ }
