@@ -1,0 +1,30 @@
+//Print all the subsequences of a string
+
+#include<iostream>
+#include<climits>
+#include<string>
+using namespace std;
+void subsequences(string s,string ans)
+{
+    if(s.length()==0)
+    {
+        cout<<ans<<endl;
+        return;
+    }
+    char ch=s[0];
+    string ros=s.substr(1);
+    subsequences(ros,ans);
+    subsequences(ros,ans+ch);
+}
+int main()
+{
+    string s;
+    cin>>s;
+    subsequences(s,"");
+}
+
+
+
+
+
+
