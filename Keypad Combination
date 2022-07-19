@@ -1,0 +1,31 @@
+// Print mobile keypad combination 
+
+INPUT==  5 3
+OUTPUT ==   mg   mh   mi   ng   nh   ni   og   oh   oi      
+
+
+#include<iostream>
+#include<string>
+using namespace std;
+void keypad_combination(string s1,string s2)
+{
+  if(s1.length()==0)
+  {
+    return;
+  }
+  char a=s1[0];
+  string ros=s1.substr(1);
+  for(int p=0;p<s2.length();p++)
+  {
+    cout<<a<<s2[p]<<"   ";
+  }
+  
+  keypad_combination(ros,s2);  
+}
+int main()
+{
+  int key1,key2;
+  cin>>key1>>key2;
+  string array[10]={".","abc","def","ghi","jkl","mno","pqrs","tu","vwx","yz"};
+  keypad_combination(array[key1],array[key2]);
+}
