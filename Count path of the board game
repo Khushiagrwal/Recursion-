@@ -1,0 +1,28 @@
+// Count the number of paths possible from start point to end point in gameboard
+
+#include<iostream>
+using namespace std;
+int boardgame(int st,int end)
+{
+    if(st==end)
+    {
+        return 1;
+    }
+    if(st>end)
+    {
+        return 0;
+    }
+    int count=0;
+    for(int i=1;i<=6;i++)
+    {
+        count+=boardgame(st+i,end);
+    }
+    return count;
+}
+int main()
+{
+    cout<<boardgame(0,3);
+}
+
+
+
