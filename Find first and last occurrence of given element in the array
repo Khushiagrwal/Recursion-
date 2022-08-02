@@ -1,0 +1,42 @@
+// Find the first and last accurence of a number in an array 
+
+#include<iostream>
+using namespace std;
+int last_occurence(int *a,int element,int n)
+{
+    if(a[n]==element)
+        return n;
+    else if(n==0)
+        return -1;
+    last_occurence(a,element,n-1);
+}
+int first_occurence(int *a,int i,int element,int n)
+{
+    if(a[i]==element)
+    {
+        return i;
+    }
+    else if(i==n)
+        return -1;
+    first_occurence(a,i+1,element,n);  
+}
+int main()
+{
+    int n,element;
+    cin>>n;
+    int *array=new int [n];
+    for(int i=0;i<n;i++)
+        cin>>array[i];
+    cout<<"Enter the element";
+    cin>>element;
+    if(first_occurence(array,0,element,n)!=-1)
+    { 
+        cout<<"First Occurence is "<<first_occurence(array,0,element,n)<<endl;
+        cout<<"Last Occurence is "<<last_occurence(array,element,n);
+    }
+    else
+    {
+        cout<<"Element not found ";
+    }
+    
+}
