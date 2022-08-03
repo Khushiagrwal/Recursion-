@@ -1,0 +1,25 @@
+// Remove all the duplicates from the array 
+
+
+#include<iostream>
+#include<string>
+using namespace std;
+string remove_duplicates(string s,int *a)
+{
+   if(s.length()==0)
+    return "";
+    string ros=s.substr(1);
+   if(a[s[0]-'a']!=1)
+   {
+        a[s[0]-'a']=1;
+        return s[0]+remove_duplicates(ros,a);
+   }
+        return remove_duplicates(ros,a);
+}
+int main()
+{
+    string s;
+    cin>>s;
+    int *array=new int [26];
+    cout<<remove_duplicates(s,array);
+}
