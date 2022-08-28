@@ -1,0 +1,20 @@
+/*
+INPUT -1209
+OUTPUT- One Two Zero Nine 
+*/
+# include <iostream>
+using namespace std;
+void saydigit(string arr[],int n )
+{
+    if(n==0)
+        return;
+    saydigit(arr,n/10);
+        cout<<arr[n%10]<<" ";
+}
+int main()
+{
+    int n;
+    cin>>n;
+    string array[10]={"Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"};
+    saydigit(array,n);
+}
