@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+bool issorted(int *arr,int key,int start,int end)
+{
+    int mid=(end+start)/2;
+    if(start>end)
+        return false;
+    if(arr[mid]==key)
+    {
+        start+=1;
+        return true;
+    }
+    else if(arr[mid]>key)
+        return false || issorted(arr,key,start,mid-1);
+    else 
+        return false || issorted(arr,key,mid+1,end);
+}
+int main()
+{
+    int n ;
+    cin>>n;
+    int *arr=new int[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    int key;
+    cin>>key;
+    if(issorted(arr,key,0,n))
+        cout<<"yes key is present ";
+    else 
+        cout<<"No key is not present ";
+}
