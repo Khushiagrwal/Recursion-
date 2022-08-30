@@ -1,0 +1,32 @@
+/*
+Check whether string palindrome or not .
+INPUT-- ABBA
+OUTPUT--Yes palindrome string 
+
+INPUT-- uiui
+OUTPUT-- No palindrome string
+*/
+
+#include<iostream>
+#include<string>
+using namespace std;
+bool palindrome(string s,int start,int end)
+{
+    if(start>end)
+        return true;
+    else if(s[start]!=s[end])
+    {
+        start=end+1;
+        return false;
+    }
+    return true && palindrome(s,start+1,end-1);
+}
+int main()
+{
+    string s;
+    cin>>s;
+    if(palindrome(s,0,s.length()-1))
+        cout<<"Yes palindrome string ";
+    else 
+        cout<<"No  palindrome string ";
+}
