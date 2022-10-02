@@ -1,0 +1,29 @@
+import java.util.*;
+public class prime_factor 
+{
+    public static void main(String[] args) 
+    {
+        Scanner a=new Scanner(System.in);
+        int t;
+        t=a.nextInt();
+        while(t!=0)
+        {
+            int n=a.nextInt();
+            prime_factor1(n);
+            t--;
+        }
+}
+public static void prime_factor1(int n)
+{
+    for(int i=2;i*i<=n;i++)
+    {
+        while(n%i==0)
+        {
+            System.out.print(i+ "    ");
+            n/=i;
+        }
+    }
+    if(n>1)
+        System.out.print(n);
+}
+}
